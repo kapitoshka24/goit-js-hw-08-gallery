@@ -60,7 +60,6 @@ function onEscPress(event) {
 function onScrollPress(event) {
   if (event.key === "ArrowLeft") {
     calculateCounter(event);
-    console.log("counter left", counter);
     if (counter === 0) {
       counter = galleryItems.length - 1;
       setNewImage(counter);
@@ -68,7 +67,6 @@ function onScrollPress(event) {
       counter -= 1;
       setNewImage(counter);
     }
-    console.log("counter left", counter);
   }
 
   if (event.key === "ArrowRight") {
@@ -81,8 +79,6 @@ function onScrollPress(event) {
       counter += 1;
       setNewImage(counter);
     }
-
-    console.log("counter right", counter);
   }
 }
 
