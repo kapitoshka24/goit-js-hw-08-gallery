@@ -52,13 +52,13 @@ function onImageClose() {
 }
 
 function onEscPress(event) {
-  if (event.key === "Escape") {
+  if (event.code === "Escape") {
     onImageClose();
   }
 }
 
 function onScrollPress(event) {
-  if (event.key === "ArrowLeft") {
+  if (event.code === "ArrowLeft") {
     calculateCounter(event);
     if (counter === 0) {
       counter = galleryItems.length - 1;
@@ -69,7 +69,7 @@ function onScrollPress(event) {
     }
   }
 
-  if (event.key === "ArrowRight") {
+  if (event.code === "ArrowRight") {
     calculateCounter(event);
 
     if (counter === galleryItems.length - 1) {
