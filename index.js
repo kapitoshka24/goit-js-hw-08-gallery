@@ -41,6 +41,7 @@ function omImageOpen(event) {
     refs.lightbox.classList.add("is-open");
     refs.lightboxImg.src = event.target.dataset.source;
     window.addEventListener("keydown", onEscPress);
+    calculateCounter(event);
   }
 }
 
@@ -59,6 +60,7 @@ function onEscPress(event) {
 function onScrollPress(event) {
   if (event.key === "ArrowLeft") {
     calculateCounter(event);
+    console.log("counter left", counter);
     if (counter === 0) {
       counter = galleryItems.length - 1;
       setNewImage(counter);
@@ -66,6 +68,7 @@ function onScrollPress(event) {
       counter -= 1;
       setNewImage(counter);
     }
+    console.log("counter left", counter);
   }
 
   if (event.key === "ArrowRight") {
@@ -79,7 +82,7 @@ function onScrollPress(event) {
       setNewImage(counter);
     }
 
-    console.log("counter", counter);
+    console.log("counter right", counter);
   }
 }
 
@@ -90,7 +93,6 @@ function setNewImage(counter) {
 
 function calculateCounter(event) {
   galleryItems.map(({ original }, i) => {
-    console.log(event.srcElement.href);
     if (event.srcElement.href === original) {
       counter = i;
       event.srcElement.href = "";
