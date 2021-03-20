@@ -1,13 +1,8 @@
 import galleryItems from "./gallery-items.js";
+import refs from "./refs";
+import "./css/styles.css";
 
 let counter = 0;
-const refs = {
-  gallery: document.querySelector(".js-gallery"),
-  lightbox: document.querySelector(".lightbox"),
-  closeBtn: document.querySelector("button[data-action='close-lightbox']"),
-  lightboxImg: document.querySelector("img.lightbox__image"),
-  overlay: document.querySelector("div.lightbox__overlay"),
-};
 
 const galleryMarkup = galleryItems
   .map(({ description, original, preview }) => {
