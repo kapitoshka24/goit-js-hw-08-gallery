@@ -7,16 +7,13 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: [
-          // "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.svg$/,
@@ -49,5 +46,6 @@ module.exports = {
     clientLogLevel: "error",
     open: true,
     stats: "errors-only",
+    historyApiFallback: true,
   },
 };
