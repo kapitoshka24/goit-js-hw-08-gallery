@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/goit-js-hw-08-gallery/",
+    // publicPath: "/",
   },
   module: {
     rules: [
